@@ -23,6 +23,8 @@ gem 'rake'
 
 # Adding rspec for running unit testing
 gem 'rspec'
+gem 'byebug'
+gem 'activerecord-import', '~> 0.13.0'
 
 group :development, :test do
 	# Adding shotgun for local web hosting

@@ -7,6 +7,20 @@ require ::File.expand_path('../config/environments/init', __FILE__)
 # Require all ActiveSupport's class and extensions
 require 'active_support/core_ext'
 
+
+# task :allurl do
+#   require "activerecord-import/base"
+#   ActiveRecord::Import.require_adapter('mysql2')
+  
+#   Url.transaction do
+#     text = File.open('urls').read
+#     columns = [:long_url]
+#     Url.import columns, text, validate: false
+#   end
+# end
+
+
+
 namespace :generate do
 	desc "Create empty model spec in spec, e.g., rake generate:spec NAME=test_name"
 	task :spec do

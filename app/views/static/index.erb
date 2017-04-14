@@ -1,2 +1,46 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+<div class="container">
+<h1>Bitsy | URL Fun-Sized</h1>
+
+
+<form action="/urls" method="post" id='shorten-form'>
+    <input type="text" name="long_url" placeholder="Paste a link to shorten it">
+    <input type="submit" value="SHORTEN">
+</form>
+<div id='flash'>
+<%= @error if @error.present? %> 
+</div>
+</div>
+
+ <div id="menu">
+    <h3>Bitsy for dummies:</h3>
+  <div class='panel'>
+      <p>1. Paste or enter the URL you want to shorten.</p>
+      <p>2. Click "Shorten".</p>
+      <p>3. You now have an itsy bitsy URL!</p>
+</div>
+</div>
+
+		
+
+
+<% if @url.present? %>
+  <table>
+
+    <%Url.all.first(50).each do |u|%>
+
+    <tr>
+      <td>
+      <%= u.long_url %>
+      </td>
+
+      <td>
+        <a href="/<%= u.short_url %>"><%= u.short_url %></a>
+      </td>
+    
+      <td>
+        <%= u.click_count %>
+      </td>
+<%end%>
+    </tr>
+  </table>
+<% end %>
