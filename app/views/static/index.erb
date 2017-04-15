@@ -4,7 +4,7 @@
 
 <form action="/urls" method="post" id='shorten-form'>
     <input type="text" name="long_url" placeholder="Paste a link to shorten it">
-    <input type="submit" value="SHORTEN">
+    <input type="submit" value="SHORTEN" id="button">
 </form>
 <div id='flash'>
 <%= @error if @error.present? %> 
@@ -15,8 +15,9 @@
     <h3>Bitsy for dummies:</h3>
   <div class='panel'>
       <p>1. Paste or enter the URL you want to shorten.</p>
-      <p>2. Click "Shorten".</p>
-      <p>3. You now have an itsy bitsy URL!</p>
+      <p>2. Make sure your URL starts with https:// or http:// or it won't work!</p> 
+      <p>3. Click "Shorten".</p>
+      <p>4. You now have an itsy bitsy URL!</p>
 </div>
 </div>
 
@@ -25,6 +26,11 @@
 
 <% if @url.present? %>
   <table>
+    <tr class="table-header">
+      <th>Your URL</th>
+      <th>Bitsy URL</th>
+      <th>Clicks</th>
+    </tr>
 
     <%Url.all.first(50).each do |u|%>
 
@@ -34,7 +40,9 @@
       </td>
 
       <td>
-        <a href="/<%= u.short_url %>"><%= u.short_url %></a>
+    
+        <a class="link" href="/<%= u.short_url %>"><%= u.short_url %></a>
+
       </td>
     
       <td>
