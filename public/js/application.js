@@ -2,7 +2,6 @@ $(document).ready(function() {
 	console.log("jQuery ready!");
      
 	$("#menu").accordion({collapsible: true, active: false});
-	
 
 	$('#shorten-form').submit(function(event) {
 		event.preventDefault();

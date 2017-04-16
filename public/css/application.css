@@ -28,10 +28,6 @@ h1 {
     color: black;
 }
 
-.table-header {
-    font-family: 'Dosis';
-
-}
 
 #menu {
     color: #ffffff;
@@ -52,23 +48,9 @@ h3 {
     text-align: center;
 }
 
-h3:after{
-    content: '\002B';
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
+input#button {
+    background-color: #319b46;
 }
-
-h3.active:after {
-    content: '\2796';
-}
-
-h3:hover {
- border: 5px dashed grey;
- border-radius: 5px;
-}
-
 
 #menu.panel {
     padding: 0 18px;
@@ -76,6 +58,12 @@ h3:hover {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+}
+
+
+.table-header {
+    font-family: 'Dosis';
+
 }
 
 
@@ -145,5 +133,9 @@ tr:nth-child(odd) {
     background-color: white;
 }
 
-background-color: white;
 
+footer {
+    text-align: center;
+    color: white;
+    font-family: "Dosis";
+}
